@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
@@ -27,6 +28,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
         [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
+        [SerializeField]private ScoreTracker score;
+        [SerializeField] private AudioClip m_Coin;
+
 
         private Camera m_Camera;
         private bool m_Jump;
@@ -55,6 +59,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+            score = GetComponent<ScoreTracker>();
         }
 
 
@@ -79,7 +84,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 m_MoveDir.y = 0f;
             }
-
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                SceneManager.LoadScene("Maze");
+            }
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
         }
 
@@ -140,6 +148,16 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_AudioSource.Play();
         }
 
+        private void OnTriggerEnter(Collider collision)
+        {
+            if (collision.gameObject.CompareTag("coin"))
+            {
+               // m_AudioSource.clip = m_Coin;
+                m_AudioSource.PlayOneShot(m_Coin);
+                collision.transform.gameObject.SetActive(false);
+                score.addScore();
+            }
+        }
 
         private void ProgressStepCycle(float speed)
         {

@@ -7,6 +7,7 @@ public class MazeLoader : MonoBehaviour {
     public GameObject floor;
     public GameObject coin;
     public GameObject enemy;
+    public GameObject player;
     public float size = 2f; //determines the space inside the wall
     public NavMeshSurface surface;
 
@@ -24,7 +25,8 @@ public class MazeLoader : MonoBehaviour {
         surface.BuildNavMesh();
         generateCoins();
         randomlyPlace(enemy);
-	}
+        randomlyPlace(player);
+    }
 	
 	// Update is called once per frame
 	void Update () {
