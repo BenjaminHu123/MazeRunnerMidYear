@@ -6,6 +6,7 @@ TagManager:
   tags:
   - coin
   - FPC
+  - enemy
   layers:
   - Default
   - TransparentFX

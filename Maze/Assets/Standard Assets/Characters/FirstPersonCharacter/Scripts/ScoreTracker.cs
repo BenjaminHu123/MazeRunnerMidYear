@@ -15,7 +15,7 @@ public class ScoreTracker : MonoBehaviour
         if (score >= 12)
         {
             scoreText.text = "Win! Score:" + score;
-            GameObject.Find("enemy").SetActive(false);
+            GameObject.FindGameObjectWithTag("enemy").SetActive(false);
         }
     }
     public void addScore()

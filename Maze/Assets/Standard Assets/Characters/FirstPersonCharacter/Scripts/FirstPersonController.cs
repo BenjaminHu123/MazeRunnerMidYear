@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
@@ -155,6 +156,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                // m_AudioSource.clip = m_Coin;
                 m_AudioSource.PlayOneShot(m_Coin);
                 collision.transform.gameObject.SetActive(false);
+                GameObject.Find("enemy(Clone)").GetComponent<NavMeshAgent>().speed++;
                 score.addScore();
             }
         }
