@@ -1,20 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class CameraSwitch : MonoBehaviour {
 
     public GameObject cameraOne;
     public GameObject cameraTwo;
+    private GameObject mainCharacter;
 
     AudioListener cameraOneAudioLis;
     AudioListener cameraTwoAudioLis;
-    private int cam = 0;
 
     // Use this for initialization
     void Start()
     {
-
+        mainCharacter = GameObject.Find("Capsule(Clone)");
         //Get Camera Listeners
         cameraOneAudioLis = cameraOne.GetComponent<AudioListener>();
         cameraTwoAudioLis = cameraTwo.GetComponent<AudioListener>();
@@ -72,7 +73,8 @@ public class CameraSwitch : MonoBehaviour {
 
             cameraTwoAudioLis.enabled = false;
             cameraTwo.SetActive(false);
-            cam = 0; //cam one is on
+            mainCharacter.GetComponent<FirstPersonController>().enabled = true;
+            
         }
 
         //Set camera position 2
@@ -83,7 +85,7 @@ public class CameraSwitch : MonoBehaviour {
 
             cameraOneAudioLis.enabled = false;
             cameraOne.SetActive(false);
-            cam = 1; //cam two is on
+            mainCharacter.GetComponent<FirstPersonController>().enabled = false;
         }
 
     }
