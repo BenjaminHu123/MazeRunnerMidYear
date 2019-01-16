@@ -10,6 +10,8 @@ public class MazeLoader : MonoBehaviour {
     public GameObject player;
     public float size = 2f; //determines the space inside the wall
     public NavMeshSurface surface;
+    public AudioSource audio1;
+    public AudioSource audio2;
 
 	private MazeCell[,] mazeCells;
     //holds an array of mazecells
@@ -30,6 +32,21 @@ public class MazeLoader : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (Vector3.Distance(GameObject.Find("enemy(Clone)").transform.position,
+            GameObject.Find("Capsule(Clone)").transform.position) >= 25 &&
+            audio2.isPlaying)
+        {
+            audio2.Stop();
+            audio1.Play();
+            RenderSettings.ambientIntensity = 1;
+        }
+        else if (Vector3.Distance(GameObject.Find("enemy(Clone)").transform.position,
+           GameObject.Find("Capsule(Clone)").transform.position) < 25 &&
+           audio1.isPlaying) {
+            audio1.Stop();
+            audio2.Play();
+            RenderSettings.ambientIntensity = .25f;
+        }
 	}
 
 	private void InitializeMaze() {
