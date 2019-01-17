@@ -4,9 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MazeMenu : MonoBehaviour {
-
-    public void ReturnToMainMenu()
+    public void LoadScene()
     {
-        SceneManager.GetSceneAt(0);
+        SceneManager.LoadScene(0);
     }
 }
