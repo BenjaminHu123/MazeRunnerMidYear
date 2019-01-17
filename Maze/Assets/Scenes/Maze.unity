@@ -251,6 +251,7 @@ GameObject:
   - component: {fileID: 685380399}
   - component: {fileID: 685380398}
   - component: {fileID: 685380397}
+  - component: {fileID: 685380400}
   m_Layer: 0
   m_Name: CamTwo
   m_TagString: Untagged
@@ -318,6 +319,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &685380400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 685380396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 929a3aeb469cafa47ad5f1d8c12d8f7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &953445868
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,7 +391,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -429,8 +441,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 114.5, y: -26.5}
-  m_SizeDelta: {x: 203.6, y: 30}
+  m_AnchoredPosition: {x: 118.8, y: -22.8}
+  m_SizeDelta: {x: 204.9, y: 32.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &988992988
 MonoBehaviour:
@@ -471,12 +483,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 929a3aeb469cafa47ad5f1d8c12d8f7b, type: 3}
-        m_MethodName: 
+      - m_Target: {fileID: 685380400}
+        m_MethodName: LoadScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
