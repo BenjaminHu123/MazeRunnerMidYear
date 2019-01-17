@@ -251,7 +251,6 @@ GameObject:
   - component: {fileID: 685380399}
   - component: {fileID: 685380398}
   - component: {fileID: 685380397}
-  - component: {fileID: 685380400}
   m_Layer: 0
   m_Name: CamTwo
   m_TagString: Untagged
@@ -319,17 +318,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &685380400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 685380396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 929a3aeb469cafa47ad5f1d8c12d8f7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &953445868
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,8 +471,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 685380400}
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 1309853122}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -535,6 +523,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1545961736577522, guid: 61d599e071d5b4a4ea3616b9e6189c14,
     type: 2}
   m_PrefabInternal: {fileID: 1582375536}
+--- !u!114 &1082470681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1082470680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 929a3aeb469cafa47ad5f1d8c12d8f7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1308490985
 GameObject:
   m_ObjectHideFlags: 0
